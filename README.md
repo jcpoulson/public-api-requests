@@ -1,3 +1,5 @@
 # public-api-requests
 
 This project communicates with a public third party API known as the "Random User Generator" to generate fake data for this employee directory. This project utilizes a programming fundamental known as asynchronous programming to complete multiple things to happen at once, in this case the webpage itself can make a call to the API for data without blocking any other parts of the page or user interaction.
+
+Style Changes: I added a border radius to each card making it look more elegant as opposed to square and static. I also added a box shadow which gives each card a very unique 3d like effect that makes the overall design more engaging. I also added a scale animation to make the card bigger when the user hovers over it, increasing the focus of the card and resulting in a more engaging user experience.
