@@ -41,9 +41,15 @@ const requestData = async () => {
     }
 
     
-    // Generate modals for each user and store the markup code in an array
+    // Generate modals for each user and stores the markup code in an array for later retrieval
     let userModals = []
     for (let i = 0; i < users.length; i++) {
+        // Formats the birthday data in mm-dd-yyyy format
+        let birthday = users[i].dob.date.substring(0,10);
+        let day = birthday.slice(8, 10);
+        let month = birthday.slice(5, 7)
+        let year = birthday.slice(0, 4)
+
         userModals.push( 
             `
                 <img class="modal-img" src="${users[i].picture.large}" alt="profile picture" id="${i}">
@@ -53,7 +59,7 @@ const requestData = async () => {
                 <hr>
                 <p class="modal-text">${users[i].cell}</p>
                 <p class="modal-text">${users[i].location.street.number} ${users[i].location.street.name} ${users[i].location.city}, ${users[i].location.state} ${users[i].location.postcode}</p>
-                <p class="modal-text">Birthday: ${users[i].dob.date.substring(0,10)}</p>
+                <p class="modal-text">Birthday: ${month}-${day}-${year}</p>
             `)
     }
 
